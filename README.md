@@ -12,10 +12,9 @@
 
 `npm start`
 
-
 ### Test
-`https://localhost:8080`
 
+`https://localhost:8080`
 
 ION is a distributed RTC system written in pure go and has client sdks for js and flutter.
 
@@ -26,7 +25,6 @@ ION is a distributed RTC system written in pure go and has client sdks for js an
 ## Read more about pion/ion
 
 [pion](https://github.com/pion)
-
 
 ## Contributing
 

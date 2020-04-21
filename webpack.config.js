@@ -2,34 +2,32 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
-  devtool: 'source-map',//eval | source-map
+  devtool: 'source-map', //eval | source-map
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.(scss|less|css)$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-    ]
+    ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'ion-sdk.js'
+    filename: 'ion-sdk.js',
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     contentBase: './dist',
     hot: true,
-    host: "0.0.0.0",
-  }
+    host: '0.0.0.0',
+  },
 };
