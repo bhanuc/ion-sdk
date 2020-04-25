@@ -15,8 +15,9 @@ const DefaultPayloadTypeVP9 = 98;
 const DefaultPayloadTypeH264 = 102;
 
 export default class Client extends EventEmitter {
-  constructor() {
+  constructor(host) {
     super();
+    this._url = host;
     this._port = 8443;
     this._uid = uuidv4();
     this._pcs = new Map();
@@ -28,7 +29,7 @@ export default class Client extends EventEmitter {
   }
 
   init() {
-    this._url = this._getProtooUrl(this._uid);
+    this._url =  this._url || this._getProtooUrl(this._uid);
 
     let transport = new protooClient.WebSocketTransport(this._url);
     this._protoo = new protooClient.Peer(transport);
